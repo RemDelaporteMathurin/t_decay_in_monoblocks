@@ -6,7 +6,8 @@ class DecayXDMF(F.XDMFExport):
     def __init__(
         self, label="decay", filename=None, mode=1, checkpoint=True, folder=None
     ) -> None:
-        super().__init__("retention", label, filename, mode, checkpoint, folder)
+        field = "retention"
+        super().__init__(field, label, filename, mode, checkpoint, folder)
 
     def write(self, t):
         functionspace = self.function.function_space()
